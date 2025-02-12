@@ -64,19 +64,18 @@ Options:
   -ca TEXT             Certificate Authority  [required]
   -dc-ip TEXT          IP Address of Domain Controller  [required]
   -u, --user TEXT      Username  [required]
-  -p, --password TEXT  Password  [required]
-  -template TEXT       Template Name vulnerable to ESC1  [required]
+  -p, --password TEXT  Password
+  -H, --hashes TEXT    NTLM hash in format LMHASH:NTHASH or just NTHASH
+  -k, --kerberos       Flag to use Kerberos authentication with ccache file
+  -ccache TEXT         Path to ccache file for Kerberos authentication
+  -template TEXT       Template Name vulnerable to ESC1. If not specified, will attempt to find one.
   -target-ip TEXT      IP Address of the target machine  [required]
+  -s, --sleep FLOAT    Base sleep time between requests in seconds
+  -j, --jitter FLOAT   Jitter percentage (0-100)
   --help               Show this message and exit.
 
+
 ```
-
-## TODO
-* Support alternative authentication methods such as NTLM hashes and ccache files
-* Automatically run "certipy find" to find and grab templates vulnerable to ESC1
-* Add jitter and sleep options to avoid detection
-* Add type validation for all variables
-
 
 ## Acknowledgements
 * [puzzlepeaches](https://github.com/puzzlepeaches): Telling me to hurry up and write this
